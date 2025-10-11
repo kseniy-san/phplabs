@@ -27,10 +27,10 @@ $age = 19;
 	- Измените код так, чтобы каждая фраза начиналась с новой строки.
 	- Изолируйте код PHP от HTML-разметки.
 	*/
-	echo "Меня зовут: $name \n";
-	echo "Мне $age лет \n";
-	echo "Тип переменной: \$name" . gettype($name). "\n";	
-	echo "Тип переменной: \$age" . gettype($age). "\n";
+	echo "Меня зовут: $name <br>";
+	echo "Мне $age лет <br>";
+	echo "Тип переменной \$name: " . gettype($name). "<br>";	
+	echo "Тип переменной \$age: " . gettype($age). "<br>";
 	unset($name, $age);
 	?> 
 </body>
