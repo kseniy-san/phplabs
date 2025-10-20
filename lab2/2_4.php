@@ -1,4 +1,7 @@
 <?php
+declare(strict_types=1);
+?>
+<?php
 	/*
 	ЗАДАЧА
 	Отрисовать навигационное меню на странице,
@@ -10,6 +13,13 @@
 		- Значением элемента с ключём 'link' является один из пунктов меню: 'Домой', 'О нас', 'Контакты', 'Таблица умножения', 'Калькулятор'
 		- Значением элемента с ключём 'href' будет имя файла, на который указывает ссылка: index.php, about.php, contact.php, table.php, calc.php
 	*/
+	$leftMenu = [
+    ['link' => 'Домой', 'href' => 'index.php'],
+    ['link' => 'О нас', 'href' => 'about.php'],
+    ['link' => 'Контакты', 'href' => 'contact.php'],
+    ['link' => 'Таблица умножения', 'href' => 'table.php'],
+    ['link' => 'Калькулятор', 'href' => 'calc.php']
+];
 	?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -43,6 +53,11 @@
 	      <li><a href='calc.php'>Калькулятор</a></li>
 	    </ul>
 	*/
+	echo "<ul class='menu'>";
+	foreach ($leftMenu as $menunew) {
+		echo "<li><a href='" . $menunew['href'] . "'>" . $menunew['link'] . "</a></li>";
+	}
+	echo "</ul>";
 	?> 
 	</nav>
 </body>
