@@ -94,8 +94,8 @@ function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
 	- Используя статическую переменную $count выведите общее число вызовов функции getTable()
 	*/
 
-        echo "<h2>Таблица без параметров:</h2>";
-    $count1 = getTable();
+    echo "<h2>Таблица без параметров:</h2>";
+    $count1 = getTable(); 
     
     echo "<h2>Таблица с одним параметром (cols=5):</h2>";
     $count2 = getTable(5);
