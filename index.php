@@ -30,7 +30,7 @@
         }
 
         hr{
-            border-top: 4px solid gold;
+            border-top:#5f030f;
         }
     </style>
 </head>
