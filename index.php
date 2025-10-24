@@ -29,8 +29,8 @@
             color: #078686;
         }
 
-        hr{
-            border-top:#5f030f;
+        hr {
+            border-color: #ff6347;
         }
     </style>
 </head>
