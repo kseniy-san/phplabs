@@ -6,6 +6,7 @@
     <title>Лабораторные работы</title>
 </head>
 <body>
+    <h1>Лабораторная работа 1</h1>
     <ul>
         <li><a href="lab1/1_1.php">Номер 1</a></li>
         <li><a href="lab1/1_2.php">Номер 2</a></li>
@@ -13,6 +14,7 @@
         <li><a href="lab1/1_4.php">Номер 4</a></li>
         <li><a href="lab1/1_5.php">Номер 5</a></li>
     </ul>
+    <h1>Лабораторная работа 2</h1>
     <ul>
         <li><a href="lab2/2_1.php">Номер 1</a></li>
         <li><a href="lab2/2_2.php">Номер 2</a></li>
