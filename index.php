@@ -9,7 +9,7 @@
         body {
             font-family: Arial;
             margin: 20px;
-            background-color: rgba(207, 238, 32, 0.384);
+            background-color: rgba(243, 129, 253, 0.38);
         }
 
         a:link {
