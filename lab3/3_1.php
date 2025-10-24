@@ -25,7 +25,7 @@ $code = '<?=$login?>';
 </head>
 
 <body>
-
+    <h1>Исправленный вариант:</h1>
     <?php
     /*
 	ЗАДАНИЕ 2
@@ -40,61 +40,45 @@ $code = '<?=$login?>';
     $login = mb_strtolower($login);
     echo "<p>Обработанный логин: '{$login}'</p>";
 
+    /**
+     * Функция pass_word роверяет сложности пароля
+     * 
+     * @param string $password Пароль для проверки
+     * @return bool true если пароль соответствует требованиям, false в ином случае
+     */
 
+    function pass_word(string $password): bool
+    {
+        if (strlen($password) < 8) {
+            return false;
+        }
 
-    $name = ucfirst($name);
+        if (!preg_match('/[A-Z]/', $password)) {
+            return false;
+        }
+
+        if (!preg_match('/[a-z]/', $password)) {
+            return false;
+        }
+
+        if (!preg_match('/[0-9]/', $password)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    $pass_word = pass_word($password);
+    echo "<p>Сложность пароля: " . ($pass_word ? 'соответствует требованиям' : 'не соответствует требованиям') . "</p>";
+
+    $name = mb_convert_case($name, MB_CASE_TITLE, "UTF-8");
     echo "<p>Обработанное имя: {$name}</p>";
+
+    $emailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+    echo "<p>Корректность email: " . ($emailValid ? 'корректный' : 'некорректный') . "</p>";
+
+    echo "<p>Значение переменной \$code: " . htmlspecialchars($code) . "</p>";
     ?>
 </body>
 
-<!-- 
-/**
- * Проверка сложности пароля
- * 
- * @param string $password Пароль для проверки
- * @return bool true если пароль соответствует требованиям, false в противном случае
- */
-function checkPasswordStrength(string $password): bool
-{
-    // Проверка длины
-    if (strlen($password) < 8) {
-        return false;
-    }
-
-    // Проверка наличия заглавной буквы
-    if (!preg_match('/[A-Z]/', $password)) {
-        return false;
-    }
-
-    // Проверка наличия строчной буквы
-    if (!preg_match('/[a-z]/', $password)) {
-        return false;
-    }
-
-    // Проверка наличия цифры
-    if (!preg_match('/[0-9]/', $password)) {
-        return false;
-    }
-
-    return true;
-}
-
-
-// Проверка сложности пароля
-$passwordStrength = checkPasswordStrength($password);
-echo "<p>Сложность пароля: " . ($passwordStrength ? 'соответствует требованиям' : 'не соответствует требованиям') . "</p>";
-
-// Обработка имени
-$name = mb_convert_case($name, MB_CASE_TITLE, "UTF-8");
-echo "<p>Обработанное имя: {$name}</p>";
-
-// Проверка email
-$emailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-echo "<p>Корректность email: " . ($emailValid ? 'корректный' : 'некорректный') . "</p>";
-
-// Вывод переменной $code
-echo "<p>Значение переменной \$code: " . htmlspecialchars($code) . "</p>";
-
-?>
- -->
 </html>
