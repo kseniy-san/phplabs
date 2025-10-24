@@ -8,7 +8,7 @@
 <body>
     <ul>
         <li><a href="lab1/1_1.php">lab1</a></li>
-        <li><a href="lab2/1_2.php">lab2</a></li>
+        <li><a href="lab1/1_2.php">lab2</a></li>
         <li><a href="lab1/1_3.php">lab1</a></li>
         <li><a href="lab1/1_4.php">lab1</a></li>
         <li><a href="lab1/1_5.php">lab1</a></li>
