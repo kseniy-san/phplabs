@@ -7,21 +7,21 @@
 </head>
 <body>
     <ul>
-        <li><a href="lab1/1_1.php">lab1</a></li>
-        <li><a href="lab1/1_2.php">lab2</a></li>
-        <li><a href="lab1/1_3.php">lab1</a></li>
-        <li><a href="lab1/1_4.php">lab1</a></li>
-        <li><a href="lab1/1_5.php">lab1</a></li>
+        <li><a href="lab1/1_1.php">Номер 1</a></li>
+        <li><a href="lab1/1_2.php">Номер 2</a></li>
+        <li><a href="lab1/1_3.php">Номер 3</a></li>
+        <li><a href="lab1/1_4.php">Номер 4</a></li>
+        <li><a href="lab1/1_5.php">Номер 5</a></li>
     </ul>
     <ul>
-        <li><a href="lab2/2_1.php">lab1</a></li>
-        <li><a href="lab2/2_2.php">lab2</a></li>
-        <li><a href="lab2/2_3.php">lab1</a></li>
-        <li><a href="lab2/2_4.php">lab1</a></li>
-        <li><a href="lab2/2_5.php">lab1</a></li>
-        <li><a href="lab2/2_6.php">lab1</a></li>
-        <li><a href="lab2/2_7.php">lab1</a></li>
-        <li><a href="lab2/2_8.php">lab1</a></li>
+        <li><a href="lab2/2_1.php">Номер 1</a></li>
+        <li><a href="lab2/2_2.php">Номер 2</a></li>
+        <li><a href="lab2/2_3.php">Номер 3</a></li>
+        <li><a href="lab2/2_4.php">Номер 4</a></li>
+        <li><a href="lab2/2_5.php">Номер 5</a></li>
+        <li><a href="lab2/2_6.php">Номер 6</a></li>
+        <li><a href="lab2/2_7.php">Номер 7</a></li>
+        <li><a href="lab2/2_8.php">Номер 8</a></li>
     </ul>
 </body>
 </html>
