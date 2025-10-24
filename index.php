@@ -13,7 +13,7 @@
         }
 
         a:link {
-            color: #006600;
+            color: #520052ff;
         }
 
         a:visited {
@@ -21,12 +21,16 @@
         }
 
         a:hover {
-            color: #2706e2;
+            color: #048a9cff;
             text-decoration: underline;
         }
 
         a:active {
             color: #078686;
+        }
+
+        hr{
+            border-top: 4px solid gold;
         }
     </style>
 </head>
