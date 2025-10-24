@@ -79,6 +79,9 @@ function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
 <body>
 	<h1>Таблица умножения</h1>
 	<?php
+
+		echo "<hr>";
+
 	/*
 	ЗАДАНИЕ 3
 	- Отрисуйте таблицу умножения вызывая функцию getTable() с различными параметрами
@@ -101,14 +104,22 @@ function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
 	echo "<h2>Таблица без параметров:</h2>";
 	$count1 = getTable();
 
+	echo "<hr>";
+
 	echo "<h2>Таблица с одним параметром (cols=5):</h2>";
 	$count2 = getTable(5);
+
+	echo "<hr>";
 
 	echo "<h2>Таблица с двумя параметрами (cols=3, rows=4):</h2>";
 	$count3 = getTable(3, 4);
 
+	echo "<hr>";
+
 	echo "<h2>Таблица с тремя параметрами (cols=6, rows=6, color='lightgreen'):</h2>";
 	$count4 = getTable(6, 6, 'lightgreen');
+
+	echo "<hr>";
 
 	echo "<h2>Общее количество вызовов функции: " . $count4 . "</h2>";
 	?>
