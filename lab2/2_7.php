@@ -1,5 +1,5 @@
 <?php
-	/*
+/*
 	ЗАДАНИЕ 1
 	- Опишите функцию getTable()
 	- Задайте для функции три аргумента: $cols, $rows, $color
@@ -11,6 +11,7 @@
 	- Измените код таким образом, чтобы таблица отрисовывалась в зависимости от входящих параметров $cols, $rows и $color
 	- Добавьте в объявлние функции описание типов аргументов
 	*/
+
 declare(strict_types=1);
 
 /**
@@ -21,35 +22,37 @@ declare(strict_types=1);
  * @param string $color Цвет фона заголовков 
  * @return int Количество вызовов функции
  */
-function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int {
-    static $count = 0;
-    $count++;
-    
-    echo "<table>";
-    
-    echo "<tr>";
-    for ($j = 1; $j <= $cols; $j++) {
-        echo "<th style='background-color: $color; text-align: center; font-weight: bold;'>" . $j . "</th>";
-    }
-    echo "</tr>";
-    
-    for ($i = 2; $i <= $rows; $i++) {
-        echo "<tr>";
-        echo "<th style='background-color: $color; text-align: center; font-weight: bold;'>" . $i . "</th>";
-        
-        for ($j = 2; $j <= $cols; $j++) {
-            echo "<td>" . ($i * $j) . "</td>";
-        }
-        echo "</tr>";
-    }
-    
-    echo "</table>";
-    
-    return $count;
+function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
+{
+	static $count = 0;
+	$count++;
+
+	echo "<table>";
+
+	echo "<tr>";
+	for ($j = 1; $j <= $cols; $j++) {
+		echo "<th style='background-color: $color; text-align: center; font-weight: bold;'>" . $j . "</th>";
+	}
+	echo "</tr>";
+
+	for ($i = 2; $i <= $rows; $i++) {
+		echo "<tr>";
+		echo "<th style='background-color: $color; text-align: center; font-weight: bold;'>" . $i . "</th>";
+
+		for ($j = 2; $j <= $cols; $j++) {
+			echo "<td>" . ($i * $j) . "</td>";
+		}
+		echo "</tr>";
+	}
+
+	echo "</table>";
+
+	return $count;
 }
 ?>
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,7 +75,8 @@ function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
 		}
 	</style>
 </head>
-<body> 
+
+<body>
 	<h1>Таблица умножения</h1>
 	<?php
 	/*
@@ -94,19 +98,20 @@ function getTable(int $cols = 10, int $rows = 10, string $color = 'yellow'): int
 	- Используя статическую переменную $count выведите общее число вызовов функции getTable()
 	*/
 
-    echo "<h2>Таблица без параметров:</h2>";
-    $count1 = getTable(); 
-    
-    echo "<h2>Таблица с одним параметром (cols=5):</h2>";
-    $count2 = getTable(5);
-    
-    echo "<h2>Таблица с двумя параметрами (cols=3, rows=4):</h2>";
-    $count3 = getTable(3, 4);
-    
-    echo "<h2>Таблица с тремя параметрами (cols=6, rows=6, color='lightgreen'):</h2>";
-    $count4 = getTable(6, 6, 'lightgreen');
-    
-    echo "<h2>Общее количество вызовов функции: " . $count4 . "</h2>";
-	?> 
+	echo "<h2>Таблица без параметров:</h2>";
+	$count1 = getTable();
+
+	echo "<h2>Таблица с одним параметром (cols=5):</h2>";
+	$count2 = getTable(5);
+
+	echo "<h2>Таблица с двумя параметрами (cols=3, rows=4):</h2>";
+	$count3 = getTable(3, 4);
+
+	echo "<h2>Таблица с тремя параметрами (cols=6, rows=6, color='lightgreen'):</h2>";
+	$count4 = getTable(6, 6, 'lightgreen');
+
+	echo "<h2>Общее количество вызовов функции: " . $count4 . "</h2>";
+	?>
 </body>
+
 </html>

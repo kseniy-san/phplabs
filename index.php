@@ -36,7 +36,7 @@
 
     <hr>
 
-    <h2>Лабораторная работа 1</h2>
+    <h2>Лабораторная работа 1:</h2>
     <ul>
         <li><a href="lab1/1_1.php">Номер 1</a></li>
         <li><a href="lab1/1_2.php">Номер 2</a></li>
@@ -47,7 +47,7 @@
 
     <hr>
 
-    <h2>Лабораторная работа 2</h2>
+    <h2>Лабораторная работа 2:</h2>
     <ul>
         <li><a href="lab2/2_1.php">Номер 1</a></li>
         <li><a href="lab2/2_2.php">Номер 2</a></li>
@@ -58,6 +58,20 @@
         <li><a href="lab2/2_7.php">Номер 7</a></li>
         <li><a href="lab2/2_8.php">Номер 8</a></li>
     </ul>
+
+    <hr>
+
+    <h2>Лабораторная работа 3:</h2>
+    <ul>
+        <li><a href="lab3/3_1.php">Номер 1</a></li>
+        <li><a href="lab3/3_2.php">Номер 2</a></li>
+        <li><a href="lab3/3_3.php">Номер 3</a></li>
+        <li><a href="lab3/3_4.php">Номер 4</a></li>
+        <li><a href="lab3/3_5.php">Номер 5</a></li>
+        <li><a href="lab3/3_6.php">Номер 6</a></li>
+    </ul>
+
+    <hr>
 
 </body>
 

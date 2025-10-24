@@ -1,17 +1,19 @@
 <?php
+
 declare(strict_types=1);
 ?>
 <?php
-	/*
+/*
 	ЗАДАНИЕ 1
 	- Создайте две целочисленные переменные $cols и $rows
 	- Присвойте созданным переменным произвольные значения в диапазоне от 1 до 10
 	*/
-    $cols = 10;
-    $rows = 10;
-	?>
+$cols = 10;
+$rows = 10;
+?>
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,6 +36,7 @@ declare(strict_types=1);
 		}
 	</style>
 </head>
+
 <body>
 	<h1>Таблица умножения</h1>
 	<?php
@@ -49,26 +52,25 @@ declare(strict_types=1);
 	- Значения в ячейках первой строки и первого столбца должны быть отрисованы полужирным шрифтом и выровнены по центру ячейки
 	- Фоновый цвет ячеек первой строки и первого столбца должен быть отличным от фонового цвета таблицы
 	*/
-    echo "<table>";
-    echo "<tr>";
-    for ($j = 1; $j <= $cols; $j++) {
-        echo "<th class='header-cell'>" . $j . "</th>";
-    }
-    echo "</tr>";
- 
-    for ($i = 2; $i <= $rows; $i++) {
-        echo "<tr>";
-        echo "<th class='header-cell'>" . $i . "</th>";
-        
-        for ($j = 2; $j <= $cols; $j++) {
-            echo "<td>" . ($i * $j) . "</td>";
-        }
-        echo "</tr>";
-    }
-    
-    echo "</table>";
-    ?> 
+	echo "<table>";
+	echo "<tr>";
+	for ($j = 1; $j <= $cols; $j++) {
+		echo "<th class='header-cell'>" . $j . "</th>";
+	}
+	echo "</tr>";
+
+	for ($i = 2; $i <= $rows; $i++) {
+		echo "<tr>";
+		echo "<th class='header-cell'>" . $i . "</th>";
+
+		for ($j = 2; $j <= $cols; $j++) {
+			echo "<td>" . ($i * $j) . "</td>";
+		}
+		echo "</tr>";
+	}
+
+	echo "</table>";
+	?>
 </body>
+
 </html>
-
-

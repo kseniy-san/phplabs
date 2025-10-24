@@ -1,5 +1,5 @@
 <?php
-	/*
+/*
 	ЗАДАНИЕ 1
 	- Опишите функцию getMenu()
 	- Задайте для функции первый аргумент $menu, в него будет передаваться массив, содержащий структуру меню
@@ -24,27 +24,28 @@ declare(strict_types=1);
  * @param bool $vertical Флаг каким образом будет отрисовано меню (true - вертикальное, false - горизонтальное)
  * @return void
  */
-function getMenu(array $menu, bool $vertical = true): void 
+function getMenu(array $menu, bool $vertical = true): void
 {
-    $class = $vertical ? 'menu' : 'menu horizontal';
-    
-    echo "<ul class='$class'>";
-    foreach ($menu as $menuItem) {
-        echo "<li><a href='" . $menuItem['href'] . "'>" . $menuItem['link'] . "</a></li>";
-    }
-    echo "</ul>";
+	$class = $vertical ? 'menu' : 'menu horizontal';
+
+	echo "<ul class='$class'>";
+	foreach ($menu as $menuItem) {
+		echo "<li><a href='" . $menuItem['href'] . "'>" . $menuItem['link'] . "</a></li>";
+	}
+	echo "</ul>";
 }
 
 $leftMenu = [
-    ['link' => 'Домой', 'href' => 'index.php'],
-    ['link' => 'О нас', 'href' => 'about.php'],
-    ['link' => 'Контакты', 'href' => 'contact.php'],
-    ['link' => 'Таблица умножения', 'href' => 'table.php'],
-    ['link' => 'Калькулятор', 'href' => 'calc.php']
+	['link' => 'Домой', 'href' => 'index.php'],
+	['link' => 'О нас', 'href' => 'about.php'],
+	['link' => 'Контакты', 'href' => 'contact.php'],
+	['link' => 'Таблица умножения', 'href' => 'table.php'],
+	['link' => 'Калькулятор', 'href' => 'calc.php']
 ];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +54,7 @@ $leftMenu = [
 	<style>
 		.menu {
 			list-style-type: none;
-			margin: 0;	
+			margin: 0;
 			padding: 0;
 		}
 
@@ -63,6 +64,7 @@ $leftMenu = [
 		}
 	</style>
 </head>
+
 <body>
 	<h1>Меню</h1>
 	<?php
@@ -74,11 +76,12 @@ $leftMenu = [
 	ЗАДАНИЕ 4
 	- Отрисуйте горизонтальное меню вызывая функцию getMenu() со вторым параметром равным false
 	*/
-    echo "<h2>Вертикальное меню:</h2>";
-    getMenu($leftMenu);
+	echo "<h2>Вертикальное меню:</h2>";
+	getMenu($leftMenu);
 
-    echo "<h2>Горизонтальное меню:</h2>";
-    getMenu($leftMenu, false);
-	?> 
+	echo "<h2>Горизонтальное меню:</h2>";
+	getMenu($leftMenu, false);
+	?>
 </body>
+
 </html>

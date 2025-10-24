@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -8,7 +9,7 @@ declare(strict_types=1);
  * @param callable $callback Функция, применяемая к каждому элементу массива
  * @return array Новый массив с результатами применения callback-функции
  */
-function map(array $array, callable $callback): array 
+function map(array $array, callable $callback): array
 {
     $result = [];
     foreach ($array as $value) {
