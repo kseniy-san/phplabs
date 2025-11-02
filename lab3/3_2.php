@@ -56,26 +56,18 @@ $hour = getdate();
     } else {
         $welcome = 'Доброй ночи';
     }
+
+    echo "<p>$welcome</p>" ;
+
+    setlocale(LC_ALL, 'ru_RU.UTF-8');
+
+    
     ?>
 </body>
 
 </html>
 
 
-
-
-
-$welcome = 'Добрый день';
-} elseif ($hour >= 18 && $hour <= 23) {
-    $welcome='Добрый вечер' ;
-    } else {
-    $welcome='Доброй ночи' ;
-    }
-
-    echo "<p>$welcome</p>" ;
-
-    // Установка локали
-    setlocale(LC_ALL, 'ru_RU.UTF-8' );
 
     // Форматирование даты с помощью IntlDateFormatter
     if (class_exists('IntlDateFormatter')) {
