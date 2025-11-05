@@ -62,7 +62,7 @@ $hour = getdate();
     setlocale(LC_ALL, 'ru_RU.UTF-8');
 
     $date = new DateTime(); 
-    $formattedDate = $date->format('j F Y года, l H:i:s');
+    $formattedDate = $date->format('j F Y года, l H:i:s') . "<br>";
     echo "Сегодня " . $formattedDate;
 
     ?>
