@@ -107,21 +107,22 @@ $hour = $date_i['hours'];
     $formattedDate = formatRussianDate($now);
     echo $formattedDate . "<br>";
 
-    $next_birthday = mktime(13, 55, 00, 2, 21, $date_i('Y'));
-    if ($next_birthday < $now) {
+    $be = date('Y');
+    $bm = (int) $_POST['Birthday_Month'];
+    $bd = (int) $_POST['Birthday_day'];
 
-        $next_birthday = mktime(13, 55, 00, 2, 21, $date_i('Y') + 1);
-    }
+    $date = "$be-$bm-$bd";
+    $check_time = strtotime($date) - time();
 
-    $time_until_birthday = $next_birthday - $now;
+    $months = floor($check_time / 2592000);
+    $days = floor($check_time / 86400);
+    $hours = floor(($check_time % 86400) / 3600);
+    $minutes = floor(($check_time % 3600) / 60);
 
-    $days = floor($time_until_birthday / (60 * 60 * 24));
-    $hours = floor(($time_until_birthday % (60 * 60 * 24)) / (60 * 60));
-    $minutes = floor(($time_until_birthday % (60 * 60)) / 60);
-    $seconds = $time_until_birthday % 60;
-
-    echo "<p>До моего дня рождения осталось:</p>";
-    echo "<p>$days дней, $hours часов, $minutes минут, $seconds секунд</p>";
+    echo "Осталось минут: $minutes <br>\n";
+    echo "Осталось часов $hours<br>\n";
+    echo "Осталось дней $days<br>\n";
+    echo "Осталось месяцев $months<br>\n";
     ?>
 </body>
 
