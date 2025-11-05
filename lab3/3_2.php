@@ -61,6 +61,7 @@ $hour = getdate();
 
     setlocale(LC_ALL, 'ru_RU.UTF-8');
 
+    datefmt_format($fmt, 0, 'MM/dd/yyyy')
     
     ?>
 </body>
