@@ -10,7 +10,8 @@ declare(strict_types=1);
 	*/
 $now = time();
 $birthday = mktime(13, 55, 00, 2, 21, 2006);
-$hour = getdate();
+$date_i = getdate();
+$hour = $date_i['hours'];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -60,11 +61,39 @@ $hour = getdate();
     echo "<p>$welcome</p>";
 
     setlocale(LC_ALL, 'ru_RU.UTF-8');
+    
+/**
+ * Форматирует дату на русском языке
+ * 
+ * @param int $timestamp метка времени
+ * @return string отформатированная дата
+ */
+function formatRussianDate(int $timestamp): string
+{
+    $months = [
+        1 => 'января', 2 => 'февраля', 3 => 'марта', 4 => 'апреля',
+        5 => 'мая', 6 => 'июня', 7 => 'июля', 8 => 'августа',
+        9 => 'сентября', 10 => 'октября', 11 => 'ноября', 12 => 'декабря'
+    ];
+    
+    $daysOfWeek = [
+        'воскресенье', 'понедельник', 'вторник', 'среда',
+        'четверг', 'пятница', 'суббота'
+    ];
+    
+    $date = getdate($timestamp);
+    $day = $date['mday'];
+    $month = $months[$date['mon']];
+    $year = $date['year'];
+    $dayOfWeek = $daysOfWeek[$date['wday']];
+    $time = date('H:i:s', $timestamp);
+    
+    return "Сегодня $day $month $year года, $dayOfWeek $time";
+}
+$formattedDate = formatRussianDate($now);
+echo $formattedDate . "<br>";
 
-    $date = new DateTime(); 
-    $formattedDate = $date->format('j F Y года, l H:i:s') . "<br>";
-    echo "Сегодня " . $formattedDate;
-
+echo "До моего дня рождения осталось:";
     ?>
 </body>
 
