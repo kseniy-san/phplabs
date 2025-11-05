@@ -57,58 +57,15 @@ $hour = getdate();
         $welcome = 'Доброй ночи';
     }
 
-    echo "<p>$welcome</p>" ;
+    echo "<p>$welcome</p>";
 
     setlocale(LC_ALL, 'ru_RU.UTF-8');
 
-    datefmt_format($fmt, 0, 'MM/dd/yyyy')
-    
+    $date = new DateTime(); 
+    $formattedDate = $date->format('j F Y года, l H:i:s');
+    echo "Сегодня " . $formattedDate;
+
     ?>
 </body>
 
 </html>
-
-
-
-    // Форматирование даты с помощью IntlDateFormatter
-    if (class_exists('IntlDateFormatter')) {
-    $formatter=new IntlDateFormatter( 'ru_RU' ,
-    IntlDateFormatter::FULL,
-    IntlDateFormatter::MEDIUM, 'Europe/Moscow' ,
-    IntlDateFormatter::GREGORIAN
-    );
-
-    // Устанавливаем кастомный паттерн для нужного формата
-    $formatter->setPattern("'Сегодня' d MMMM Y 'года,' eeee HH:mm:ss");
-    $formatted_date = $formatter->format($now);
-    echo "<p>$formatted_date</p>";
-    } else {
-    // Альтернатива если Intl не установлен
-    $formatted_date = strftime("Сегодня %d %B %Y года, %A %H:%M:%S", $now);
-    echo "<p>$formatted_date</p>";
-    }
-
-    // Вычисление времени до дня рождения
-    $time_until_birthday = $birthday - $now;
-
-    if ($time_until_birthday > 0) {
-    $days = floor($time_until_birthday / (60 * 60 * 24));
-    $hours = floor(($time_until_birthday % (60 * 60 * 24)) / (60 * 60));
-    $minutes = floor(($time_until_birthday % (60 * 60)) / 60);
-    $seconds = $time_until_birthday % 60;
-
-    echo "<p>До моего дня рождения осталось:</p>";
-    echo "<p>$days дней, $hours часов, $minutes минут, $seconds секунд</p>";
-    } else {
-    // Если день рождения уже прошел в этом году, вычисляем для следующего года
-    $next_year_birthday = mktime(0, 0, 0, 12, 15, date('Y') + 1);
-    $time_until_birthday = $next_year_birthday - $now;
-
-    $days = floor($time_until_birthday / (60 * 60 * 24));
-    $hours = floor(($time_until_birthday % (60 * 60 * 24)) / (60 * 60));
-    $minutes = floor(($time_until_birthday % (60 * 60)) / 60);
-    $seconds = $time_until_birthday % 60;
-
-    echo "<p>До моего дня рождения осталось:</p>";
-    echo "<p>$days дней, $hours часов, $minutes минут, $seconds секунд</p>";
-    }

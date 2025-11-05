@@ -48,9 +48,9 @@ $opel = [
 	ЗАДАНИЕ 2
 	- С помощью подстановки в строку выведите значения всех трёх массивов в виде: name - model - speed - doors -year,  например: bmw - x5 - 120 - 5 - 2006
 	*/
-    echo "bmw - {$bmw['model']} - {$bmw['speed, km/h']} - " . $bmw['doors'] . " - " . $bmw['year'] . "<br>";
-    echo "toyota - " . $toyota['model'] . " - " . $toyota['speed, km/h'] . " - " . $toyota['doors'] . " - " . $toyota['year'] . "<br>";
-    echo "opel - " . $opel['model'] . " - " . $opel['speed, km/h'] . " - " . $opel['doors'] . " - " . $opel['year'];
+    echo "bmw - {$bmw['model']} - {$bmw['speed, km/h']} - {$bmw['doors']} - {$bmw['year']}<br>";
+    echo "toyota - {$toyota['model']} - {$toyota['speed, km/h']} - {$toyota['doors']} - {$toyota['year']}<br>";
+    echo "opel - {$opel['model']} - {$opel['speed, km/h']} - {$opel['doors']} - {$opel['year']}<br>";
     ?>
 
 </body>
