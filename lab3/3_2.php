@@ -61,39 +61,67 @@ $hour = $date_i['hours'];
     echo "<p>$welcome</p>";
 
     setlocale(LC_ALL, 'ru_RU.UTF-8');
-    
-/**
- * Форматирует дату на русском языке
- * 
- * @param int $timestamp метка времени
- * @return string отформатированная дата
- */
-function formatRussianDate(int $timestamp): string
-{
-    $months = [
-        1 => 'января', 2 => 'февраля', 3 => 'марта', 4 => 'апреля',
-        5 => 'мая', 6 => 'июня', 7 => 'июля', 8 => 'августа',
-        9 => 'сентября', 10 => 'октября', 11 => 'ноября', 12 => 'декабря'
-    ];
-    
-    $daysOfWeek = [
-        'воскресенье', 'понедельник', 'вторник', 'среда',
-        'четверг', 'пятница', 'суббота'
-    ];
-    
-    $date = getdate($timestamp);
-    $day = $date['mday'];
-    $month = $months[$date['mon']];
-    $year = $date['year'];
-    $dayOfWeek = $daysOfWeek[$date['wday']];
-    $time = date('H:i:s', $timestamp);
-    
-    return "Сегодня $day $month $year года, $dayOfWeek $time";
-}
-$formattedDate = formatRussianDate($now);
-echo $formattedDate . "<br>";
 
-echo "До моего дня рождения осталось:";
+    /**
+     * Форматирует дату на русском языке
+     * 
+     * @param int $timestamp метка времени
+     * @return string отформатированная дата
+     */
+    function formatRussianDate(int $timestamp): string
+    {
+        $months = [
+            1 => 'января',
+            2 => 'февраля',
+            3 => 'марта',
+            4 => 'апреля',
+            5 => 'мая',
+            6 => 'июня',
+            7 => 'июля',
+            8 => 'августа',
+            9 => 'сентября',
+            10 => 'октября',
+            11 => 'ноября',
+            12 => 'декабря'
+        ];
+
+        $daysOfWeek = [
+            'воскресенье',
+            'понедельник',
+            'вторник',
+            'среда',
+            'четверг',
+            'пятница',
+            'суббота'
+        ];
+
+        $date = getdate($timestamp);
+        $day = $date['mday'];
+        $month = $months[$date['mon']];
+        $year = $date['year'];
+        $dayOfWeek = $daysOfWeek[$date['wday']];
+        $time = date('H:i:s', $timestamp);
+
+        return "Сегодня $day $month $year года, $dayOfWeek $time";
+    }
+    $formattedDate = formatRussianDate($now);
+    echo $formattedDate . "<br>";
+
+    $next_birthday = mktime(13, 55, 00, 2, 21, $date_i('Y'));
+    if ($next_birthday < $now) {
+
+        $next_birthday = mktime(13, 55, 00, 2, 21, $date_i('Y') + 1);
+    }
+
+    $time_until_birthday = $next_birthday - $now;
+
+    $days = floor($time_until_birthday / (60 * 60 * 24));
+    $hours = floor(($time_until_birthday % (60 * 60 * 24)) / (60 * 60));
+    $minutes = floor(($time_until_birthday % (60 * 60)) / 60);
+    $seconds = $time_until_birthday % 60;
+
+    echo "<p>До моего дня рождения осталось:</p>";
+    echo "<p>$days дней, $hours часов, $minutes минут, $seconds секунд</p>";
     ?>
 </body>
 
