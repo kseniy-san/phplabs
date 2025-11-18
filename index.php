@@ -71,8 +71,7 @@
         <li><a href="lab3/3_2.php">Номер 2</a></li>
         <li><a href="lab3/3_3.php">Номер 3</a></li>
         <li><a href="lab3/3_4.php">Номер 4</a></li>
-        <li><a href="lab3/3_5.php">Номер 5</a></li>
-        <li><a href="lab3/3_6.php">Номер 6</a></li>
+        <li><a href="lab3/сайт/index.php">Номер 5</a></li>
     </ul>
 
     <hr>
