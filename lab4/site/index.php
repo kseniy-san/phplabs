@@ -44,17 +44,16 @@ $now = time();
 $hour = getdate()['hours'];
 
 if ($hour >= 0 && $hour < 6) {
-	return 'Доброй ночи';
+    $welcome = 'Доброй ночи';
 } elseif ($hour >= 6 && $hour < 12) {
-	return 'Доброе утро';
+    $welcome = 'Доброе утро';
 } elseif ($hour >= 12 && $hour < 18) {
-	return 'Добрый день';
-} elseif ($hour >= 18 && $hour <= 23) {
-	return 'Добрый вечер';
+    $welcome = 'Добрый день';
+} elseif ($hour >= 18 && $hour < 23) {
+    $welcome = 'Добрый вечер';
 } else {
-	return 'Доброй ночи';
+    $welcome = 'Доброй ночи';
 }
-
 
 // Инициализация заголовков страницы
 $title = 'Сайт нашей школы';
@@ -117,7 +116,7 @@ switch ($id) {
 				include 'calc.php';
 				break;
 			default:
-				include 'index.inc.php';
+				include 'inc/index.inc.php';
 		}
 		?>
 		<!-- Область основного контента -->
