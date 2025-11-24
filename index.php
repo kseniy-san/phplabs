@@ -87,6 +87,7 @@
     <ul>
         <li><a href="lab5/5_1.php">Номер 1</a></li>
         <li><a href="lab5/5_2.php">Номер 2</a></li>
+        <li><a href="lab5/5_3.php">Номер 3</a></li>
     </ul>
 
 </body>
