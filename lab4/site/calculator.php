@@ -16,16 +16,13 @@ $num2 = '';
 $operator = '+';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Фильтрация и получение значений
     $num1 = filter_input(INPUT_POST, 'num1', FILTER_VALIDATE_FLOAT);
     $num2 = filter_input(INPUT_POST, 'num2', FILTER_VALIDATE_FLOAT);
     $operator = filter_input(INPUT_POST, 'operator', FILTER_SANITIZE_SPECIAL_CHARS);
 
-    // Проверка корректности введённых данных
     if ($num1 === false || $num2 === false)
         $result = 'Ошибка: введите корректные числа!';
     else {
-        // Выполнение операции в зависимости от оператора
         switch ($operator) {
             case '+':
                 $result = $num1 + $num2;
@@ -56,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 - Если результат существует, выведите его
 */
 if ($result !== null)
-    echo "<h2>Результат: $result</h2>";
+    echo "Результат: $result";
 ?>
 
 <form method="post">
