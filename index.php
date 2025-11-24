@@ -71,10 +71,16 @@
         <li><a href="lab3/3_2.php">Номер 2</a></li>
         <li><a href="lab3/3_3.php">Номер 3</a></li>
         <li><a href="lab3/3_4.php">Номер 4</a></li>
-        <li><a href="lab3/сайт/index.php">Номер 5</a></li>
+        <li><a href="lab3/site/index.php">Номер 5</a></li>
     </ul>
 
     <hr>
+
+    <h2>Лабораторная работа 4:</h2>
+    <ul>
+        <li><a href="lab4/site/index.php">Номер 1</a></li>
+
+    </ul>
 
 </body>
 
