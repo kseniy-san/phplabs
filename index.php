@@ -95,7 +95,7 @@
     <h2>Лабораторная работа 6:</h2>
     <ul>
         <li><a href="lab6/6_1.php">Номер 1</a></li>
-
+        <li><a href="lab6/session/menu.inc.php">Номер 2</a></li>
     </ul>
 
 </body>
