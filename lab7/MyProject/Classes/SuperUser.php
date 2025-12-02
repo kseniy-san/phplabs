@@ -17,7 +17,7 @@ class SuperUser extends User
      */
     public function showInfo(): void
     {
-        echo "<div style='border: 2px solid #f00; padding: 10px; margin: 10px; background: #ffe6e6;'>";
+        echo "<div style='padding: 10px'>";
         echo "<h3>Информация о суперпользователе:</h3>";
         echo "<p><strong>Имя:</strong> {$this->name}</p>";
         echo "<p><strong>Логин:</strong> {$this->login}</p>";

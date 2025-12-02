@@ -24,7 +24,7 @@ class User
      */
     public function showInfo(): void
     {
-        echo "<div style='border: 1px solid #ccc; padding: 10px; margin: 10px;'>";
+        echo "<div style='padding: 10px'>";
         echo "<h3>Информация о пользователе:</h3>";
         echo "<p><strong>Имя:</strong> {$this->name}</p>";
         echo "<p><strong>Логин:</strong> {$this->login}</p>";
