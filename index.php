@@ -98,6 +98,13 @@
         <li><a href="lab6/session/menu.inc.php">Номер 2</a></li>
     </ul>
 
+    <hr>
+
+    <h2>Лабораторная работа 7:</h2>
+    <ul>
+        <li><a href="lab7/users.php">Номер 1</a></li>
+    </ul>
+    
 </body>
 
 </html>
