@@ -105,6 +105,12 @@
         <li><a href="lab7/users.php">Номер 1</a></li>
     </ul>
     
+    <hr>
+
+    <h2>Лабораторная работа 8:</h2>
+    <ul>
+        <li><a href="lab8/gbook.php">Номер 1</a></li>
+    </ul>
 </body>
 
 </html>
