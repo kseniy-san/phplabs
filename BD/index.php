@@ -1,15 +1,13 @@
 <?php
-// Конфигурация подключения к БД
+
 $db_host = 'localhost:3307';
 $db_user = 'root';
 $db_pass = '45_P67';
 $db_name = 'Travel_agency';
 
-// Функция подключения к БД
 function db_connect() {
     global $db_host, $db_user, $db_pass, $db_name;
     
-    // Разделяем хост и порт
     list($host, $port) = explode(':', $db_host);
     
     try {
@@ -27,7 +25,6 @@ function db_connect() {
     }
 }
 
-// Функция выполнения SQL-запроса
 function execute_query($sql) {
     $result = db_connect();
     
@@ -43,10 +40,8 @@ function execute_query($sql) {
         return ['error' => 'Пустой SQL-запрос'];
     }
     
-    // Определяем тип запроса
     $query_type = strtoupper(explode(' ', $sql)[0]);
     
-    // Выполняем запрос
     $query_result = $conn->query($sql);
     
     if ($query_result === false) {
@@ -55,19 +50,15 @@ function execute_query($sql) {
         return ['error' => "Ошибка SQL: $error"];
     }
     
-    // Обрабатываем результат
     if (in_array($query_type, ['SELECT', 'SHOW', 'DESCRIBE', 'EXPLAIN'])) {
-        // Запрос с возвратом данных
         $data = [];
         $columns = [];
         
         if ($query_result->num_rows > 0) {
-            // Получаем названия колонок
             while ($field = $query_result->fetch_field()) {
                 $columns[] = $field->name;
             }
             
-            // Получаем данные
             while ($row = $query_result->fetch_assoc()) {
                 $data[] = $row;
             }
@@ -83,7 +74,6 @@ function execute_query($sql) {
         ];
         
     } else {
-        // Запрос без возврата данных
         $affected_rows = $conn->affected_rows;
         $conn->close();
         
@@ -95,14 +85,12 @@ function execute_query($sql) {
     }
 }
 
-// Проверка соединения
 function check_connection() {
     $result = db_connect();
     
     if ($result[0]) {
         $conn = $result[1];
         
-        // Получаем информацию о БД
         $db_info = $conn->query("SELECT DATABASE() as db")->fetch_assoc();
         $conn->close();
         
@@ -112,14 +100,12 @@ function check_connection() {
     }
 }
 
-// Обработка AJAX запроса для проверки соединения
 if (isset($_GET['action']) && $_GET['action'] == 'check_connection') {
     header('Content-Type: application/json');
     echo json_encode(check_connection(), JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-// Обработка POST запроса (выполнение SQL)
 $result = null;
 $error = null;
 $query = '';
@@ -316,7 +302,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sql_query'])) {
     </div>
 
     <script>
-        // Проверка подключения при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             checkConnection();
         });
