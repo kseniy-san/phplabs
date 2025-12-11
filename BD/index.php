@@ -127,132 +127,108 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sql_query'])) {
     <meta charset="UTF-8">
     <title>SQL Editor</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: Arial, sans-serif; 
-            background: #f0f2f5; 
             padding: 20px; 
+            background: #fff; 
         }
         .container { 
             max-width: 1200px; 
             margin: 0 auto; 
-            background: white; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            padding: 20px; 
         }
         h1 { 
             color: #333; 
             margin-bottom: 20px; 
-            padding-bottom: 10px; 
-            border-bottom: 2px solid #eaeaea; 
         }
         .status { 
-            background: #f8f9fa; 
-            padding: 10px 15px; 
-            border-radius: 5px; 
             margin-bottom: 20px; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
+            padding: 10px; 
+            background: #f5f5f5; 
+            border-radius: 4px;
         }
         .status-dot { 
+            display: inline-block;
             width: 10px; 
             height: 10px; 
             border-radius: 50%; 
-            background: #dc3545; 
+            background: #ccc; 
+            margin-right: 5px;
         }
-        .status-dot.connected { background: #28a745; }
+        .status-dot.connected { background: #0c0; }
         .form-group { margin-bottom: 20px; }
-        label { 
-            display: block; 
-            margin-bottom: 5px; 
-            font-weight: bold; 
-            color: #555; 
-        }
         textarea { 
             width: 100%; 
             min-height: 100px; 
             padding: 10px; 
-            border: 1px solid #ddd; 
-            border-radius: 4px; 
-            font-family: 'Courier New', monospace; 
+            border: 1px solid #ccc; 
+            font-family: monospace; 
             font-size: 14px; 
-            resize: vertical; 
+            border-radius: 4px;
         }
         button { 
-            background: #007bff; 
+            background: #0066cc; 
             color: white; 
             border: none; 
             padding: 10px 20px; 
-            border-radius: 4px; 
             cursor: pointer; 
-            font-size: 16px; 
+            border-radius: 4px;
         }
-        button:hover { background: #0056b3; }
         .clear-btn { 
-            background: #6c757d; 
+            background: #999; 
             margin-left: 10px; 
         }
-        .clear-btn:hover { background: #545b62; }
         .message { 
-            padding: 15px; 
+            padding: 10px; 
             margin: 20px 0; 
-            border-radius: 4px; 
+            border-radius: 4px;
         }
         .error { 
-            background: #f8d7da; 
-            color: #721c24; 
-            border: 1px solid #f5c6cb; 
+            background: #ffd6d6; 
+            color: #900; 
         }
         .success { 
-            background: #d4edda; 
-            color: #155724; 
-            border: 1px solid #c3e6cb; 
+            background: #d6ffd6; 
+            color: #090; 
         }
         table { 
             width: 100%; 
             border-collapse: collapse; 
             margin-top: 20px; 
-            font-size: 14px; 
         }
         th { 
-            background: #f8f9fa; 
-            padding: 12px; 
+            background: #eee; 
+            padding: 8px; 
             text-align: left; 
-            border-bottom: 2px solid #dee2e6; 
-            font-weight: bold; 
+            border-bottom: 1px solid #ccc; 
         }
         td { 
-            padding: 10px 12px; 
-            border-bottom: 1px solid #dee2e6; 
+            padding: 8px; 
+            border-bottom: 1px solid #eee; 
         }
-        tr:hover { background: #f5f5f5; }
         .rowcount { 
             margin: 10px 0; 
             color: #666; 
-            font-size: 14px; 
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>SQL-запросы к  базе данных "Тур Агентство"</h1>
+        <h1>SQL-запросы к базе данных "Тур агентство"</h1>
         
         <div class="status">
-            <div class="status-dot" id="status-dot"></div>
+            <span class="status-dot" id="status-dot"></span>
             <span id="status-text">Проверка подключения...</span>
         </div>
         
         <form method="POST" action="">
             <div class="form-group">
-                <label for="sql_query">Введите Запрос:</label>
-                <textarea id="sql_query" name="sql_query" placeholder="Введите SQL запрос..."><?php echo htmlspecialchars($query); ?></textarea>
+                <label for="sql_query">Введите SQL-запрос:</label>
+                <textarea id="sql_query" name="sql_query" placeholder="Введите SQL запрос..." rows="5"><?php echo htmlspecialchars($query); ?></textarea>
             </div>
             
             <div>
                 <button type="submit">Выполнить</button>
-                <button type="button" class="clear-btn" onclick="document.getElementById('sql_query').value = ''">Очистить</button>
+                <button type="button" class="clear-btn" onclick="document.getElementById('sql_query').value=''">Очистить</button>
             </div>
         </form>
         
