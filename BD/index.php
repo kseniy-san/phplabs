@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sql_query'])) {
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>SQL Editor - Тур Агентство</title>
+    <title>SQL Editor</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -237,7 +237,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sql_query'])) {
 </head>
 <body>
     <div class="container">
-        <h1>SQL Редактор - База данных "Тур Агентство"</h1>
+        <h1>SQL-запросы к  базе данных "Тур Агентство"</h1>
         
         <div class="status">
             <div class="status-dot" id="status-dot"></div>
@@ -246,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sql_query'])) {
         
         <form method="POST" action="">
             <div class="form-group">
-                <label for="sql_query">SQL Запрос:</label>
+                <label for="sql_query">Введите Запрос:</label>
                 <textarea id="sql_query" name="sql_query" placeholder="Введите SQL запрос..."><?php echo htmlspecialchars($query); ?></textarea>
             </div>
             
@@ -316,14 +316,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sql_query'])) {
                 
                 if (data.success) {
                     statusDot.className = 'status-dot connected';
-                    statusText.textContent = `✓ Подключено к базе: ${data.database}`;
+                    statusText.textContent = `Подключено к базе: ${data.database}`;
                 } else {
                     statusDot.className = 'status-dot';
-                    statusText.textContent = `✗ Ошибка: ${data.error}`;
+                    statusText.textContent = `Ошибка: ${data.error}`;
                 }
             } catch (error) {
                 statusDot.className = 'status-dot';
-                statusText.textContent = '✗ Ошибка сети';
+                statusText.textContent = 'Ошибка сети';
             }
         }
     </script>
